@@ -1,5 +1,7 @@
 import { Lato } from '@next/font/google';
 import type { AppProps } from 'next/app';
+
+import Header from 'components/Header';
 import '../styles/globals.sass';
 
 const lato = Lato({
@@ -11,6 +13,7 @@ const lato = Lato({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={lato.className}>
+      <Header />
       <Component {...pageProps} />
     </main>
   );

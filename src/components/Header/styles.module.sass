@@ -1,0 +1,59 @@
+@import '../../styles/_variables'
+
+.headerContainer
+  height: 10rem
+  border-bottom: 1px solid $-divisor
+  background: $header
+
+.headerContent
+  max-width: 80rem
+  height: 10rem
+  margin: 0 auto
+  padding: 0 2rem
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  nav
+    margin-left: 5rem
+    height: 10rem
+
+    a
+      display: inline-block
+      position: relative
+      height: 10rem
+      padding: 0 0.5rem
+      line-height: 10rem
+      color: $-divisor
+      transition: color 0.2s
+
+      & + a
+        margin-left: 2rem
+      &:hover
+        color: $white
+
+@media (max-width: 890px)
+  .headerContainer
+    height: 11rem
+    padding: 0.5rem 0
+    display: flex
+    align-items: center
+
+  .headerContent
+    height: 11rem
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+    img
+      height: auto
+
+    nav
+      margin-left: auto
+      margin-right: auto
+      height: 5rem
+
+      a
+        height: 5rem
+        line-height: 5rem
+
