@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import styles from '../styles/component.module.css';
+
 export default function Home() {
   return (
     <>
