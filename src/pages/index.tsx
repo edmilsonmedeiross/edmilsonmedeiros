@@ -25,6 +25,7 @@ export default function Home() {
           <section className={styles.ctaText}>
             <h1>Olá, me chamo Eddie!</h1>
             <Image
+              className={styles.ctaAvatar}
               src={avatar}
               quality={100}
               width={400}
@@ -33,6 +34,7 @@ export default function Home() {
             />
           </section>
           <Image
+            className={styles.ctaImage}
             src={bio}
             quality={100}
             width={545}
