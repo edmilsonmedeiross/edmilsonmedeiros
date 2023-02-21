@@ -1,0 +1,71 @@
+@import './_variables.sass'
+
+.container
+  display: block
+
+.containerHeader
+  min-height: calc( 100vh - 11rem )
+  margin: 0 auto
+  max-width: 85rem
+
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  img
+    max-width: 640px
+    filter: drop-shadow(3px 3px 14px #000)
+
+.ctaText
+  max-width: 600px
+  display: flex
+  flex-direction: column
+  align-items: center
+  
+  img
+    //background: linear-gradient( 180deg, rgba(0,0,0,0.5) 0%, rgba(168, 168, 168, 0.5) 100% )
+    border-radius: 50%
+    filter: drop-shadow(3px 3px 14px #000)
+
+  h1
+    font-size: 3.5rem
+    font-weight: 900
+    line-height: 4.5rem
+    margin-top: 2.5rem
+    color: $white
+    filter: drop-shadow(3px 3px 14px #000)
+
+.divisor
+  width: 100%
+  bottom: 0
+  height: 1px
+  background: $-divisor
+
+.sectionContent
+  margin: 5.5rem auto
+  max-width: 1120px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: 0.2s
+
+  section
+    max-width: 670px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  img
+    filter: drop-shadow(3px 3px 14px #000)
+    & + img
+      margin-left: 2rem
+    &:hover
+      transform: scale(1.2)
+
+  h2
+    font-size: 2.2rem
+    font-weight: 900
+    line-height: 4.5rem
+    margin-top: 2.2rem
+    color: $white
+    filter: drop-shadow(3px 3px 14px #000)
