@@ -1,41 +1,38 @@
 @import './_variables.sass'
 
 .container
-  display: block
+  .containerHeader
+    margin: 0 auto
+    max-width: 1120px
 
-.containerHeader
-  min-height: calc( 100vh - 11rem )
-  margin: 0 auto
-  max-width: 85rem
-
-  display: flex
-  align-items: center
-  justify-content: space-between
+    display: flex
+    align-items: center
+    justify-content: space-between
 
   img
     max-width: 640px
     filter: drop-shadow(3px 3px 14px #000)
 
-.ctaText
-  max-width: 600px
-  display: flex
-  flex-direction: column
-  align-items: center
-  
-  img
-    border-radius: 50%
-    filter: drop-shadow(3px 3px 14px #000)
+  .ctaText
+    max-width: 600px
+    display: flex
+    flex-direction: column
+    align-items: center
+    
+    img
+      border-radius: 50%
+      filter: drop-shadow(3px 3px 14px #000)
 
-  h1
-    font-size: 3.5rem
-    font-weight: 900
-    line-height: 4.5rem
-    margin-top: 2.5rem
-    color: $white
-    filter: drop-shadow(3px 3px 14px #000)
+    h1
+      font-size: 3.5rem
+      font-weight: 900
+      line-height: 4.5rem
+      margin-top: 2.5rem
+      color: $white
+      filter: drop-shadow(3px 3px 14px #000)
 
-    span 
-      color: $cta
+      span 
+        color: $cta
 
 .divisor
   width: 100%
@@ -67,6 +64,9 @@
 
 @media (max-width: 1400px)
   .container
+    height: 100%
+    width: 100%
+
     .containerHeader
       padding: 2rem 2rem
       display: flex
@@ -75,18 +75,21 @@
     div h1
       font-size: 2.5rem
 
-.ctaAvatar
-  width: 300px
-  height: 300px
-  max-width: 100%
-  margin: 3rem auto
+    .ctaAvatar
+      width: 300px
+      height: 300px
+      max-width: 100%
+      margin: 3rem auto
 
-.ctaImage
-  max-width: 100%
-  margin: 3rem auto
+    .ctaImage
+      max-width: 100%
+      margin: 3rem auto
 
 @media (max-width: 1080px)
   .container
+    height: 100%
+    width: 100%
+
     .containerHeader
       padding: 0 2rem
       display: flex
@@ -108,9 +111,11 @@
 
 @media (max-width: 640px)
   .container
+    height: 100%
+    width: 100%
+    
     .containerHeader
       .ctaText
-
         h1
           font-size: 1.88rem
           line-height: 3rem
@@ -125,11 +130,6 @@
         max-width: 100%
         height: auto
         
-
-  .ctaText
-    section
-      h1
-        font-size: 1rem
 
   .sectionContent
     max-width: 400px
