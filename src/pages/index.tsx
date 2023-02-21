@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import 'animate.css';
 
+import Header from 'components/Header';
 import Stack from 'components/Stack';
 
 import styles from '../styles/home.module.sass';
@@ -16,6 +17,7 @@ export default function Home() {
         <title>edmilsonmedeiross</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <main className={styles.container}>
         <div className={styles.containerHeader}>
           <section className={styles.ctaText}>

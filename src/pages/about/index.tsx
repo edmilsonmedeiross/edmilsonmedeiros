@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
+import Header from 'components/Header';
+
 import styles from './styles.module.sass';
 
 import avatar from '../../../public/images/aboutAvatar.jpeg';
@@ -11,6 +13,7 @@ import whats from '../../../public/images/WhatsApp.svg';
 function About() {
   return (
     <>
+      <Header />
       <main className={styles.container}>
         <section className={styles.containerCtt}>
           <h1>
