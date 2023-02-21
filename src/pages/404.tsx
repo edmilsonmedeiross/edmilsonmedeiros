@@ -9,7 +9,7 @@ import fan from '../../public/images/error-bro.png';
 function NotFound() {
   return (
     <main className={styles.container}>
-      <Image src={fan} alt="Error bro" width={300} height={300} />
+      <Image src={fan} alt="Error bro" width={300} height={300} quality={100} />
       <h3>Página não encontrada volte para a home!</h3>
       <Link href="/">
         <button>Home</button>
