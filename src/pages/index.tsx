@@ -29,6 +29,7 @@ export default function Home() {
               width={400}
               height={400}
               alt="bio de edmilson"
+              priority={true}
             />
           </section>
           <Image
@@ -38,6 +39,7 @@ export default function Home() {
             width={545}
             height={235}
             alt="bio de edmilson"
+            priority={true}
           />
         </div>
 

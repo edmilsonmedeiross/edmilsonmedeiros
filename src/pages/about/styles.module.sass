@@ -1,0 +1,170 @@
+@import '../../styles/_variables'
+  
+  
+.container
+  height: 100vh
+  max-width: 1120px
+  margin: 0 auto
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr 1fr
+  align-items: baseline
+
+  .bottomBar
+    visibility: hidden
+  
+  
+
+  .containerCtt
+    max-width: 600px
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    
+
+    span
+      color: $cta
+
+    img 
+      border-radius: 50%
+
+    h1
+      color: $white
+      font-size: 3rem
+      margin: 2rem auto
+
+    div
+      margin: 1rem auto
+      background: $white
+      border-radius: 10px
+      padding: 0.2rem
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .whatssapp
+        img:hover
+          transform: scale(1.1)
+
+      .linkedin
+        svg
+          color: #0a66c2
+          border-radius: 4px
+        
+
+      a
+        & + a
+          margin-left: 1rem
+        &:hover 
+          svg
+            transform: scale(1.1)
+
+.containerText
+  max-width: 500px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin: 4rem auto
+
+  span
+    color: $cta
+    font-size: 1.2rem
+   
+
+
+  p
+    color: $white
+    font-size: 1.2rem
+    // margin: 1rem auto
+    text-align: center
+
+    & + p
+     margin: 1rem auto
+
+
+@media (max-width: 1200px)
+  .container
+    grid-template-columns: repeat(auto-fil, minmax(400px, 401px))
+    height: 100%
+    padding: 0 1rem
+
+    .containerCtt
+      margin: 0 auto
+      max-width: 400px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      h1
+        font-size: 2.3rem
+        margin: 1rem auto
+
+
+  .containerText
+    margin: 0 auto
+    max-width: 400px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    p
+      font-size: 1rem
+      margin: 0 auto
+      text-align: center
+
+@media (max-width: 900px)
+  .container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 0 1rem
+
+
+    .containerCtt
+      width: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      h1
+        font-size: 2.5rem
+        margin: 3rem auto
+
+      div
+        visibility: hidden
+
+    .containerText
+      margin-bottom: 5rem
+
+    .bottomBar
+      visibility: visible
+      background: $white
+      position: fixed
+      bottom: 0
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+
+      a
+        & + a
+          margin-left: 1rem
+        &:hover 
+          svg
+            transform: scale(1.1)
+
+      .whatssapp
+        img:hover
+          transform: scale(1.1)
+
+      .linkedin
+        svg
+          color: #0a66c2
+          border-radius: 4px

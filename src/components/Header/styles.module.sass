@@ -35,18 +35,21 @@
 @media (max-width: 890px)
   .headerContainer
     height: 11rem
-    padding: 0.5rem 0
-    display: flex
+    padding: 2.5rem 0
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 100px 100px
     align-items: center
-
-  .headerContent
-    height: 11rem
-    display: flex
-    flex-direction: column
-    justify-content: space-around
 
     img
       height: auto
+      width: auto
+
+  .headerContent
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
 
     nav
       margin-left: auto
