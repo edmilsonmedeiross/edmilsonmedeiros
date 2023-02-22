@@ -35,7 +35,7 @@ export default function Home() {
             />
           </section>
           <Image
-            className={`${styles.ctaImage} animate__animated animate__slideInRight animate__slow `}
+            className={`${styles.ctaImage} animate__animated animate__fadeInLeft animate__slow`}
             src={bio}
             quality={100}
             width={545}

@@ -1,6 +1,7 @@
 import bootstrap from '../../public/images/bootstrap.png';
 import html from '../../public/images/html.png';
 import js from '../../public/images/js.png';
+import next from '../../public/images/next.png';
 import react from '../../public/images/react.png';
 import redux from '../../public/images/redux.png';
 import sass from '../../public/images/sass.png';
@@ -62,6 +63,14 @@ const stacks = [
     quality: 100,
     width: 50,
     height: 37,
+  },
+  {
+    name: 'Next.js',
+    src: next,
+    alt: 'next.js icon',
+    quality: 100,
+    width: 45,
+    height: 45,
   },
 ];
 
