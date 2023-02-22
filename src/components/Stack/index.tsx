@@ -8,7 +8,7 @@ function Stack() {
   return (
     <div className={styles.container}>
       {stacks.map((stack) => (
-        <div key={stack.name}>
+        <div key={stack.name} data-aos="fade-up">
           <Image
             src={stack.src}
             alt={stack.alt}

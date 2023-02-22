@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import 'animate.css';
+import { useEffect } from 'react';
 
 import Header from 'components/Header';
 import Stack from 'components/Stack';
@@ -10,7 +11,14 @@ import styles from '../styles/home.module.sass';
 import avatar from '../../public/images/sem fundo.png';
 import bio from '../../public/images/transparentbio.png';
 
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 export default function Home() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <>
       <Head>
@@ -49,7 +57,9 @@ export default function Home() {
 
         <div className={styles.sectionContent}>
           <section>
-            <h2>Tecnologias que mais utilizei esse ano</h2>
+            <h2 data-aos="fade-right">
+              Tecnologias que mais utilizei esse ano
+            </h2>
             <Stack />
           </section>
         </div>

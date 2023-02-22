@@ -1,10 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import styles from './styles.module.sass';
-
-import logo from '../../../public/images/logo.svg';
 
 function Header() {
   const router = useRouter();
@@ -14,9 +11,6 @@ function Header() {
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <Link href="/">
-            <Image src={logo} alt="logo" width={200} height={200} />
-          </Link>
           <nav>
             <Link href="/">
               <p className={pathname === '/' ? 'active' : ''}>Home</p>
