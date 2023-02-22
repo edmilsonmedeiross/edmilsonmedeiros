@@ -10,9 +10,13 @@ function NotFound() {
   return (
     <main className={styles.container}>
       <Image src={fan} alt="Error bro" width={300} height={300} quality={100} />
-      <h3>Página não encontrada volte para a home!</h3>
+      <h3>Em breve você verá meus projetos aqui!</h3>
+      <p>
+        Por enquanto leia sobre minha trajetória e fique à vontade para entrar
+        em contato.{' '}
+      </p>
       <Link href="/">
-        <button>Home</button>
+        <button>Voltar</button>
       </Link>
     </main>
   );
