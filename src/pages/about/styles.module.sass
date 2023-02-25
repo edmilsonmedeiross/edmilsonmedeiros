@@ -32,7 +32,7 @@
 
     div
       margin: 1rem auto
-      background: $white
+      // background: $white
       border-radius: 10px
       padding: 0.2rem
       width: 100%
@@ -45,9 +45,16 @@
           transform: scale(1.1)
 
       .linkedin
+       
         svg
           color: #0a66c2
           border-radius: 4px
+          background: $white
+
+      .github
+        img:hover
+          transform: scale(1.1)
+         
         
       a
         & + a
@@ -64,14 +71,16 @@
   align-items: center
   margin: 4rem auto
 
-  span
-    color: $cta
-    font-size: 1.2rem
+  strong
+    color: $warning
+    font-size: 1.5rem
+    // text-align: center
+    // padding: 1rem
+    width: 100%
 
   p
     color: $white
     font-size: 1.2rem
-    // margin: 1rem auto
     text-align: center
 
     & + p

@@ -6,7 +6,7 @@ import stacks from '../../services/stacks';
 
 function Stack() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       {stacks.map((stack) => (
         <div key={stack.name} data-aos="fade-up">
           <Image
@@ -19,7 +19,7 @@ function Stack() {
           <p>{stack.name}</p>
         </div>
       ))}
-    </div>
+    </main>
   );
 }
 

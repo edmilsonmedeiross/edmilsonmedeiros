@@ -1,19 +1,37 @@
+import { Roboto_Mono } from '@next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useContext, useEffect } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import Header from 'components/Header';
+import SideBar from 'components/SideBar';
 
 import styles from './styles.module.sass';
 
 import avatar from '../../../public/images/aboutAvatar.jpeg';
+import github from '../../../public/images/github.png';
 import whats from '../../../public/images/WhatsApp.svg';
 
+import { AppContext } from 'context/AppContext';
+
+const roboto = Roboto_Mono({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 function About() {
+  const { isMounted, setIsMounted } = useContext(AppContext);
+
+  useEffect(() => {
+    setIsMounted(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
-      <Header />
+      {isMounted ? <SideBar /> : <Header />}
       <main className={styles.container}>
         <section className={styles.containerCtt}>
           <h1>
@@ -29,8 +47,12 @@ function About() {
             placeholder="blur"
           />
           <div>
-            <Link href="https://github.com/edmilsonmedeiross" target="_blank">
-              <FaGithub size={40} />
+            <Link
+              className={styles.github}
+              href="https://github.com/edmilsonmedeiross"
+              target="_blank"
+            >
+              <Image src={github} alt="Whatsapp icon" width={45} height={45} />
             </Link>
             <Link
               className={styles.linkedin}
@@ -80,9 +102,11 @@ function About() {
               Espero que este portfólio seja uma boa demonstração do meu
               trabalho e que possa lhe dar uma ideia do que eu posso oferecer
               como desenvolvedor. Se você estiver interessado em trabalhar
-              comigo, sinta-se à vontade para entrar em contato. <br />
-              <span>Obrigado por visitar o meu portfólio!</span>
+              comigo, sinta-se à vontade para entrar em contato.
             </p>
+            <strong className={roboto.className}>
+              Obrigado por visitar o meu portfólio!
+            </strong>
           </article>
         </section>
         <div className={styles.bottomBar}>

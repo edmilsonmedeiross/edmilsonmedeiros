@@ -2,8 +2,8 @@
 
 .headerContainer
   height: 10rem
-  border-bottom: 1px solid $-divisor
   background: $header
+  box-shadow: 0 2px 20px $divisor
 
 .headerContent
   max-width: 1120px
@@ -16,6 +16,13 @@
 
   nav
     display: flex
+    align-items: center
+    justify-content: center
+
+    button
+      visibility: hidden
+      background: transparent
+      border: 0
 
     a
       padding: 0 0.5rem
@@ -32,19 +39,15 @@
   .headerContainer
     .headerContent
       nav
-        a
-          font-size: 1rem
+        visibility: hidden
 
-@media (max-width: 400px)
-  .headerContainer
-    .headerContent
-      justify-content: flex-end
-      nav
-        flex-direction: column
-        align-items: flex-end
-        gap: 0.8rem
+      button
+        position: absolute
+        top: 1rem
+        right: 1rem
+        visibility: visible
 
-        a
-          margin: 0
+
+        
           
 

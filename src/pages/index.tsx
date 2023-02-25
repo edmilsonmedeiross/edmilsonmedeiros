@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import 'animate.css';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
+import StacksList from '../components/StacksList';
 import Header from 'components/Header';
-import Stack from 'components/Stack';
+import SideBar from 'components/SideBar';
 
 import styles from '../styles/home.module.sass';
 
@@ -13,19 +14,26 @@ import bio from '../../public/images/transparentbio.png';
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { AppContext } from 'context/AppContext';
 
 export default function Home() {
+  const { isMounted, setIsMounted } = useContext(AppContext);
+
   useEffect(() => {
     Aos.init({ duration: 1500 });
+    setIsMounted(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <>
+    <div className={styles.containerMain}>
       <Head>
         <title>edmilsonmedeiross</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+
+      {isMounted ? <SideBar /> : <Header />}
+
       <main className={styles.container}>
         <div className={styles.containerHeader}>
           <section className={styles.ctaText}>
@@ -42,6 +50,7 @@ export default function Home() {
               priority={true}
             />
           </section>
+
           <Image
             className={`${styles.ctaImage} animate__animated animate__fadeInLeft animate__slow`}
             src={bio}
@@ -60,10 +69,10 @@ export default function Home() {
             <h2 data-aos="fade-right">
               Tecnologias que mais utilizei esse ano
             </h2>
-            <Stack />
+            <StacksList />
           </section>
         </div>
       </main>
-    </>
+    </div>
   );
 }
