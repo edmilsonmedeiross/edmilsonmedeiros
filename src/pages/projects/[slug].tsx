@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { Component, useContext } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
 
 import Header from 'components/Header';
 import SideBar from 'components/SideBar';
@@ -24,7 +24,13 @@ type ProjectDetailsProps = {
 };
 
 function ProjectDetail({ project }: ProjectDetailsProps) {
-  const { isMounted } = useContext(AppContext);
+  const { isMounted, setIsMounted } = useContext(AppContext);
+
+  useEffect(() => {
+    setIsMounted(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       {isMounted ? (
