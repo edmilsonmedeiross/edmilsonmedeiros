@@ -2,7 +2,7 @@ import { Roboto_Mono } from '@next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext, useEffect } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
 
 import Header from 'components/Header';
 import SideBar from 'components/SideBar';
@@ -82,6 +82,13 @@ function About() {
                     height={45}
                   />
                 </Link>
+                <Link
+                  href="./curriculo.pdf"
+                  download="curriculo edmilson.pdf"
+                  target="_blank"
+                >
+                  <FaFileDownload size={38} color="white" />
+                </Link>
               </div>
             </section>
             <section className={styles.containerText}>
@@ -141,6 +148,13 @@ function About() {
                 target="_blank"
               >
                 <Image src={whats} alt="Whatsapp icon" width={45} height={45} />
+              </Link>
+              <Link
+                href="./curriculo.pdf"
+                download="curriculo edmilson.pdf"
+                target="_blank"
+              >
+                <FaFileDownload size={38} color="black" />
               </Link>
             </div>
           </main>
