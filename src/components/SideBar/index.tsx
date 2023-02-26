@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import 'animate.css';
 
 import styles from './styles.module.sass';
 
