@@ -26,53 +26,58 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.containerMain}>
+    <>
       <Head>
         <title>edmilsonmedeiross</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {isMounted ? <SideBar /> : <Header />}
+      {isMounted ? (
+        <SideBar />
+      ) : (
+        <>
+          <Header />
+          <main className={styles.container}>
+            <div className={styles.containerHeader}>
+              <section className={styles.ctaText}>
+                <h1 className="animate__animated animate__fadeInLeft animate__slow">
+                  Olá, me chamo <span>Eddie!</span>
+                </h1>
+                <Image
+                  className={`${styles.ctaAvatar} animate__animated animate__fadeIn animate__slow animate__delay-2s	`}
+                  src={avatar}
+                  quality={100}
+                  width={400}
+                  height={400}
+                  alt="bio de edmilson"
+                  priority={true}
+                />
+              </section>
 
-      <main className={styles.container}>
-        <div className={styles.containerHeader}>
-          <section className={styles.ctaText}>
-            <h1 className="animate__animated animate__fadeInLeft animate__slow">
-              Olá, me chamo <span>Eddie!</span>
-            </h1>
-            <Image
-              className={`${styles.ctaAvatar} animate__animated animate__fadeIn animate__slow animate__delay-2s	`}
-              src={avatar}
-              quality={100}
-              width={400}
-              height={400}
-              alt="bio de edmilson"
-              priority={true}
-            />
-          </section>
+              <Image
+                className={`${styles.ctaImage} animate__animated animate__fadeInLeft animate__slow`}
+                src={bio}
+                quality={100}
+                width={545}
+                height={235}
+                alt="bio de edmilson"
+                priority={true}
+              />
+            </div>
 
-          <Image
-            className={`${styles.ctaImage} animate__animated animate__fadeInLeft animate__slow`}
-            src={bio}
-            quality={100}
-            width={545}
-            height={235}
-            alt="bio de edmilson"
-            priority={true}
-          />
-        </div>
+            <hr className={styles.divisor} />
 
-        <hr className={styles.divisor} />
-
-        <div className={styles.sectionContent}>
-          <section>
-            <h2 data-aos="fade-right">
-              Tecnologias que mais utilizei esse ano
-            </h2>
-            <StacksList />
-          </section>
-        </div>
-      </main>
-    </div>
+            <div className={styles.sectionContent}>
+              <section>
+                <h2 data-aos="fade-right">
+                  Tecnologias que mais utilizei esse ano
+                </h2>
+                <StacksList />
+              </section>
+            </div>
+          </main>
+        </>
+      )}
+    </>
   );
 }

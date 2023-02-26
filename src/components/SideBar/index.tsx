@@ -18,7 +18,7 @@ function SideBar() {
   };
 
   return (
-    <div>
+    <div className="animate__animated animate__rotateInUpLeft animate__faster">
       <nav className={styles.navBar}>
         <Link href="/">
           <p className={pathname === '/' ? 'active' : ''}>Home</p>

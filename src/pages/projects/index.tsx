@@ -35,15 +35,20 @@ function Projects({ projects }: ProjectProps) {
 
   return (
     <>
-      {isMounted ? <SideBar /> : <Header />}
-
-      <main className={styles.container}>
-        <div className={styles.content}>
-          {projects.map((project, index) => (
-            <ProjectCard proj={project} key={index} />
-          ))}
-        </div>
-      </main>
+      {isMounted ? (
+        <SideBar />
+      ) : (
+        <>
+          <Header />
+          <main className={styles.container}>
+            <div className={styles.content}>
+              {projects.map((project, index) => (
+                <ProjectCard proj={project} key={index} />
+              ))}
+            </div>
+          </main>
+        </>
+      )}
     </>
   );
 }
