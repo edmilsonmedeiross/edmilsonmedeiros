@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { Component } from 'react';
 
-import styles from './styles.module.sass';
+import styles from './slug.module.sass';
 
 import Prismic from '@prismicio/client';
 import { getPrismicClient } from 'services/prismic';
@@ -31,6 +31,7 @@ function ProjectDetail({ project }: ProjectDetailsProps) {
           height={400}
           quality={100}
         />
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {project.description.map((paragraph: any) => {
           if (paragraph.type === 'paragraph') {
             return <p key={paragraph.text}>{paragraph.text}</p>;
@@ -75,7 +76,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
