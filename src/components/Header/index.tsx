@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import GroupedContacts from "../GroupedContacts";
 
 interface NavLink {
   title: string;
@@ -21,6 +22,7 @@ const Header: React.FC = () => {
           {navLink.title}
         </Link>
       ))}
+      <GroupedContacts />
     </nav>
   );
 };
