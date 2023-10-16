@@ -1,12 +1,14 @@
-import Header from "../components/Header"
+import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <div>
-        <h1>Meu Portfolio Novo</h1>
-      </div>
-    </main>
-  )
+      <main>
+        <div>
+          <h1>Meu Portfolio Novo</h1>
+        </div>
+      </main>
+    </>
+  );
 }
