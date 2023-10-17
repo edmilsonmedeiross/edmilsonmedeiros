@@ -1,25 +1,19 @@
 import React from "react";
 import { stacks } from "../../utils/stacks";
 import Image from "next/image";
+import IconList from "../IconList";
 
 function MyTechStacks() {
   return (
-    <div>
-      <h1>Minhas Tech Stacks</h1>
-      <p>Tecnologias que mais tranalhei recentemente 🧑‍💻</p>
+    <div className="text-slate-50 flex flex-col gap-4">
+      <div>
+        <h1 className="text-xl text-center">Minhas Tech Stacks</h1>
+        <p className="text-center">
+          Tecnologias que mais tranalhei recentemente 🧑‍💻
+        </p>
+      </div>
       <div className="flex gap-3 rounded-full">
-        {stacks.map((stack) => {
-          return (
-            <Image
-              className="rounded-full"
-              key={stack.name}
-              src={stack.image}
-              alt={stack.name}
-              width={35}
-              height={35}
-            />
-          );
-        })}
+        <IconList iconData={stacks} />
       </div>
     </div>
   );

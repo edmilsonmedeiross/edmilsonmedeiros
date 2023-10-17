@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="flex flex-col w-full h-full items-center justify-center gap-4">
         <ApresentationCard />
         <MyTechStacks />
       </main>
