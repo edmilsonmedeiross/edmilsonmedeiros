@@ -3,7 +3,7 @@ import { GithubOutlined, LinkedinOutlined, WhatsAppOutlined } from '@ant-design/
 
 function GroupedContacts() {
   return (
-    <div>
+    <div className='flex gap-2'>
       <LinkedinOutlined />
       <WhatsAppOutlined />
       <GithubOutlined />
