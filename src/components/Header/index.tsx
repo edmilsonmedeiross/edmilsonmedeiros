@@ -16,7 +16,7 @@ const navLinks: NavLink[] = [
 
 const Header: React.FC = () => {
   return (
-    <nav className="flex justify-center w-full">
+    <nav className="flex justify-center w-full h-auto mt-10">
       <div className="flex max-w-xl text-slate-300 gap-5 p-5 items-baseline">
         {navLinks.map((navLink) => (
           <Link key={navLink.url} href={navLink.url}>

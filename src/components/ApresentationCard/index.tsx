@@ -3,8 +3,8 @@ import React from "react";
 
 function ApresentationCard() {
   return (
-    <section className="flex md:max-w-xl sm:max-w-md text-slate-50 justify-center p-5">
-      <div className="flex w-full items-center max-sm:flex-col">
+    <section className="flex h-auto justify-center text-slate-50 p-5">
+      <div className="flex items-center w-9/12 max-sm:flex-col">
         <div className="flex flex-col">
           <h1>Olá eu sou o Eddie 👋</h1>
           <h3>
