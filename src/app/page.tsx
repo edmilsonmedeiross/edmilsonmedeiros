@@ -6,19 +6,16 @@ import ProfessionalSkills from "@/components/ProfessionalExperience";
 import { Client } from "../helpers/graphql";
 
 export default async function Home() {
-  // Client.setToken(process.env.GITHUB_TOKEN || "");
   const pinnedRepos = await Client.getPinnedRepos();
-
-  console.log(pinnedRepos);
 
   return (
     <>
       <Header />
-      <main className="flex flex-col w-full h-full">
+      <main className="flex flex-col w-full h-full items-center">
         <ApresentationCard />
         <MyTechStacks />
         <ProfessionalSkills />
-        <Projects />
+        <Projects projects={pinnedRepos} />
       </main>
     </>
   );
