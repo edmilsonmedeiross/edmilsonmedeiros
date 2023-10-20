@@ -64,6 +64,7 @@ export interface IPinnedRepo {
   name: string;
   url: string;
   stargazersCount: number;
+  readme: string;
   primaryLanguage: ILanguage;
   description: string;
   createdAt: string;
@@ -75,6 +76,6 @@ export interface IPinnedRepo {
   isInOrganization: boolean;
   isTemplate: boolean;
   languages: ILanguage[];
-  licenseInfo: ILicense;
+  licenseInfo?: ILicense;
   latestRelease: IRelease;
 }

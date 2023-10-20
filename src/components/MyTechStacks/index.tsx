@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { stacks } from "../../utils/stacks";
 import Image from "next/image";

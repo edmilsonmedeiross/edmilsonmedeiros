@@ -2,7 +2,7 @@ import { gql, GraphQLClient } from "graphql-request";
 import { IPinnedRepo } from "./types";
 
 export class Client {
-  static token = process.env.GITHUB_TOKEN || "";
+  static token = process.env.GITHUB_TOKEN as string;
   private static client = new GraphQLClient("https://api.github.com/graphql");
 
   static setToken(token: string) {
@@ -23,6 +23,11 @@ export class Client {
           pinnedItems(first: 6, types: REPOSITORY) {
             nodes {
               ... on Repository {
+                object(expression: "HEAD:README.md") {
+                  ... on Blob {
+                    text
+                  }
+                }
                 name
                 url
                 stargazerCount
@@ -118,11 +123,14 @@ export class Client {
     const res = (await this.client.request(query)) as any;
 
     const repos: IPinnedRepo[] = res.user.pinnedItems.nodes.map((node: any) => {
+      console.log(node);
+
       return {
         name: node.name,
         url: node.url,
         stargazersCount: node.stargazerCount,
         primaryLanguage: node.primaryLanguage,
+        readme: node.object.text,
         description: node?.description,
         createdAt: node.createdAt,
         forkCount: node.forkCount,
