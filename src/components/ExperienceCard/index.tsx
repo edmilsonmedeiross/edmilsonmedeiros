@@ -1,7 +1,8 @@
 "use client";
-import { Divider } from "antd";
+import { Divider, Tag } from "antd";
 import Image from "next/image";
 import React from "react";
+import { GithubOutlined } from "@ant-design/icons";
 
 interface ExperienceProps {
   title: string;
@@ -9,38 +10,50 @@ interface ExperienceProps {
   description: string;
   image: string;
   time: string[];
-  status?: string;
+  status: string;
 }
 
 function ExperienceCard({ data }: { data: ExperienceProps }) {
   return (
     <>
-      <div className="flex p-5 justify-evenly">
-        <div className="flex gap-4 items-center">
+      <div className="flex flex-col gap-2">
+        <div className="flex gap-4 justify-between text-white">
           <Image
-            className="rounded-full"
+            className="rounded-br-2xl rounded-ss-2xl"
             src={data.image}
             alt={data.title}
             width={80}
             height={80}
           />
           <div className="flex flex-col justify-between">
-            <h3>{data.title}</h3>
-            <h4>{data.employer}</h4>
-            <p>{data.description}</p>
+            <div className="flex gap-3">
+              <h1>{data.title}</h1>
+              <Tag
+                bordered={false}
+                className=" bg-green-400 text-lime-500 bg-opacity-25 text-center"
+                icon={<GithubOutlined />}
+              >
+                {data.status}
+              </Tag>
+            </div>
+            <h2>{data.employer}</h2>
+            <p className="bg-gray-500 text-center w-full p-1 rounded-lg break-words bg-opacity-30 text-white">
+              {data.description}
+            </p>
           </div>
         </div>
-        <div className="flex flex-col justify-between">
-          <p className="flex items-center justify-center w-auto h-6 rounded-lg bg-green-400 text-lime-500 font-normal text-sm bg-opacity-25">
-            {data.status}
-          </p>
-          <div className="flex gap-2">
-            {data.time?.map((time) => (
+        <div className="flex">
+          <Tag
+            bordered={false}
+            className="flex gap-2 w-full text-white justify-evenly bg-blue-400 bg-opacity-30"
+          >
+            {data.time.map((time) => (
               <p key={time}>{time}</p>
             ))}
-          </div>
+          </Tag>
         </div>
       </div>
+      <Divider />
     </>
   );
 }

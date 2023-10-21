@@ -4,6 +4,7 @@ import MyTechStacks from "@/components/MyTechStacks";
 import Projects from "@/components/Projects";
 import ProfessionalSkills from "@/components/ProfessionalExperience";
 import { Client } from "../helpers/graphql";
+import Education from "@/components/Education";
 
 export default async function Home() {
   const pinnedRepos = await Client.getPinnedRepos();
@@ -14,6 +15,7 @@ export default async function Home() {
       <main className="flex flex-col w-full h-full items-center">
         <ApresentationCard />
         <MyTechStacks />
+        <Education />
         <ProfessionalSkills />
         <Projects projects={pinnedRepos} />
       </main>

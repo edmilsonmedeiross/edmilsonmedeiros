@@ -18,6 +18,9 @@ async function DetailProject({ params }: { params: { name: string } }) {
               h1: ({ node, ...props }) => (
                 <h1 className="text-center" {...props} />
               ),
+              li: ({ node, ...props }) => (
+                <li className="list-disc" {...props} />
+              ),
             }}
           >
             {repo?.readme}
