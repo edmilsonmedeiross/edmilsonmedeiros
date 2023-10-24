@@ -3,18 +3,17 @@
 import React from "react";
 import ProjectCard from "../ProjectCard";
 import { IPinnedRepo } from "@/helpers/types";
-import { Col, Row } from "antd";
 
 function Projects({ projects }: { projects: IPinnedRepo[] }) {
   return (
-    <section className="max-w-3xl w-full">
-      <Row gutter={20} className="flex justify-center w-full">
+    <section className="flex flex-col w-full text-white border-2 border-orange-600 items-center">
+      <h1 className="text-center p-3">Principais Projetos</h1>
+
+      <div className="flex gap-3 flex-wrap items-center justify-center border-2 border-yellow-400 max-w-3xl w-full">
         {projects.map((project) => (
-          <Col span={8} key={project.name}>
-            <ProjectCard project={project} />
-          </Col>
+          <ProjectCard project={project} key={project.name} />
         ))}
-      </Row>
+      </div>
     </section>
   );
 }

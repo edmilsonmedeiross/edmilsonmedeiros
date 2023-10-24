@@ -23,8 +23,7 @@ const experiences = [
   {
     title: "Desenvolvedor Fullstack",
     employer: "AGB",
-    description:
-      "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "boris nisi ut aliquip ex ea commodo consequat.",
     image: "/agb.jpg",
     time: ["fevereiro 2019", "dezembro 2020"],
     status: "fulltime",
@@ -33,8 +32,8 @@ const experiences = [
 
 function ProfessionalSkills() {
   return (
-    <section className="flex flex-col gap-2 w-4/5">
-      <h2 className="text-center text-white">Experiencia Profissional</h2>
+    <section className="flex text-white flex-col gap-2 border-2 border-orange-500 items-center justify-center w-full">
+      <h2 className="text-center">Experiencia Profissional</h2>
       {experiences.map((experience) => (
         <ExperienceCard key={experience.title} data={experience} />
       ))}

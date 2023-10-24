@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import ProfessionalSkills from "@/components/ProfessionalExperience";
 import { Client } from "../helpers/graphql";
 import Education from "@/components/Education";
+import { Divider } from "antd";
 
 export default async function Home() {
   const pinnedRepos = await Client.getPinnedRepos();
@@ -12,11 +13,16 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col w-full h-full items-center">
+      <Divider />
+      <main className="flex flex-col w-full h-full">
         <ApresentationCard />
+        <Divider />
         <MyTechStacks />
+        <Divider />
         <Education />
+        <Divider />
         <ProfessionalSkills />
+        <Divider />
         <Projects projects={pinnedRepos} />
       </main>
     </>

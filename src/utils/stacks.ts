@@ -26,11 +26,6 @@ export const stacks = [
     color: "#F05032",
   },
   {
-    name: "Go",
-    image: Go,
-    color: "#00ADD8",
-  },
-  {
     name: "HTML",
     image: Html,
     color: "#E34F26",
@@ -89,5 +84,13 @@ export const stacks = [
     name: "MySQL",
     image: Mysql,
     color: "#4479A1",
+  },
+];
+
+export const stacks2 = [
+  {
+    name: "Go",
+    image: Go,
+    color: "#00ADD8",
   },
 ];

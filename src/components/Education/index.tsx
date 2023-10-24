@@ -10,6 +10,7 @@ const educations = [
     time: ["Dezembro 2019", "-", "Fevereiro 2023"],
     image: "/agb.jpg",
     duration: "4 anos",
+    isFree: false,
   },
   {
     college: "University of California, Irvine",
@@ -18,20 +19,22 @@ const educations = [
     time: ["Setembro/2019", "Novembro/2023"],
     image: "/agb.jpg",
     duration: "4 anos",
+    isFree: false,
   },
   {
-    college: "University of California, Irvine",
-    title: "B.S. Computer Science",
-    status: "Bacharelado",
+    college: "Udemy",
+    title: "Nest Js",
+    status: "Livre",
     time: ["Agosto - 2019", "-", "Julho - 2023"],
     image: "/agb.jpg",
-    duration: "4 anos",
+    duration: "350 horas",
+    isFree: true,
   },
 ];
 
 function Education() {
   return (
-    <div className="text-white">
+    <div className="w-full flex flex-col items-center justify-center text-white border-2 border-orange-500">
       <h1 className="text-center">Educação</h1>
       {educations.map((education) => (
         <EducationCard education={education} key={education.title} />

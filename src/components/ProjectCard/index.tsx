@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatName, getImageFromMarkdown } from "@/helpers";
 import { GithubOutlined, GlobalOutlined } from "@ant-design/icons";
+import { Divider } from "antd";
 interface ProjectProps {
   name: string;
   description: string;
@@ -13,36 +14,34 @@ interface ProjectProps {
 }
 
 function ProjectCard({ project }: { project: ProjectProps }) {
-  console.log(project);
-
   return (
-    <>
-      <Link href={`/project/${project.name}`}>
-        <div className="flex flex-col text-white gap-3 max-h-96 bg-slate-400">
-          <div>
-            <Image
-              className="rounded-2xl"
-              src={getImageFromMarkdown(project.readme)}
-              alt={project.name}
-              width={300}
-              height={300}
-            />
-          </div>
-          <div className="w-full text-center">
-            <h3>{formatName(project.name)}</h3>
-            <p>{project.description}</p>
-          </div>
-        </div>
+    <div className="flex w-52 p-2 flex-col justify-center items-center border-2 border-red-600">
+      <Link
+        href={`/project/${project.name}`}
+        className="flex flex-col items-center justify-center"
+      >
+        <Image
+          className="rounded-2xl"
+          src={getImageFromMarkdown(project.readme)}
+          alt={project.name}
+          width={200}
+          height={200}
+        />
+
+        <h3 className="text-center font-medium text-lg p-2">
+          {formatName(project.name)}
+        </h3>
+        <p className="line-clamp-4 p-2">{project.description}</p>
       </Link>
-      <div className="flex w-full h-24 justify-center p-4 gap-4">
+      <div className="flex gap-3 p-2">
         <Link href={project.homepageUrl} target="_blank">
-          <GlobalOutlined size={40} color="white" />
+          <GlobalOutlined color="white" />
         </Link>
         <Link href={project.url} target="_blank" className="">
-          <GithubOutlined size={40} color="white" />
+          <GithubOutlined color="white" />
         </Link>
       </div>
-    </>
+    </div>
   );
 }
 
