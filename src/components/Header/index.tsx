@@ -1,46 +1,33 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useContext } from 'react';
-import { FaBars } from 'react-icons/fa';
+"use client";
+import React from "react";
+import Link from "next/link";
+import GroupedContacts from "../GroupedContacts";
 
-import styles from './styles.module.sass';
-
-import { AppContext } from 'context/AppContext';
-
-function Header() {
-  const router = useRouter();
-  const { pathname } = router;
-
-  const { isMounted, setIsMounted } = useContext(AppContext);
-
-  const togleIcon = () => {
-    setIsMounted(!isMounted);
-  };
-
-  return (
-    <>
-      <header className={styles.headerContainer}>
-        <div className={styles.headerContent}>
-          <nav>
-            <Link href="/">
-              <p className={pathname === '/' ? 'active' : ''}>Home</p>
-            </Link>
-            <Link href="/projects">
-              <p className={pathname === '/projects' ? 'active' : ''}>
-                Projetos
-              </p>
-            </Link>
-            <Link href="/about">
-              <p className={pathname === '/about' ? 'active' : ''}>Sobre mim</p>
-            </Link>
-            <button onClick={togleIcon}>
-              <FaBars size={35} color="white" />
-            </button>
-          </nav>
-        </div>
-      </header>
-    </>
-  );
+interface NavLink {
+  title: string;
+  url: string;
 }
+
+const navLinks: NavLink[] = [
+  { title: "Home", url: "/" },
+  { title: "About", url: "/about" },
+  { title: "Services", url: "/services" },
+  { title: "Contact", url: "/contact" },
+];
+
+const Header: React.FC = () => {
+  return (
+    <nav className="flex justify-center w-full h-auto mt-10">
+      <div className="flex max-w-xl text-slate-300 gap-5 p-5 items-baseline">
+        {navLinks.map((navLink) => (
+          <Link key={navLink.url} href={navLink.url}>
+            {navLink.title}
+          </Link>
+        ))}
+        <GroupedContacts />
+      </div>
+    </nav>
+  );
+};
 
 export default Header;

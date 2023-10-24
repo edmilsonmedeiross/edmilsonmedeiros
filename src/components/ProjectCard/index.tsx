@@ -1,42 +1,48 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-
-import styles from './styles.module.sass';
-
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { formatName, getImageFromMarkdown } from "@/helpers";
+import { GithubOutlined, GlobalOutlined } from "@ant-design/icons";
 interface ProjectProps {
-  proj: {
-    slug: string;
-    title: string;
-    description: string;
-    thumbnail: string;
-    github: string;
-    online: string;
-  };
+  name: string;
+  description: string;
+  readme: string;
+  url: string;
+  homepageUrl: string;
 }
 
-function ProjectCard(proj: ProjectProps) {
+function ProjectCard({ project }: { project: ProjectProps }) {
+  console.log(project);
+
   return (
-    <section className={styles.container}>
-      <div className={styles.content}>
-        <h1>{proj.proj.title}</h1>
-        <Link href={`/projects/${proj.proj.slug}`}>
-          <Image
-            src={proj.proj.thumbnail}
-            alt={proj.proj.title}
-            width={300}
-            height={300}
-            quality={100}
-          />
+    <>
+      <Link href={`/project/${project.name}`}>
+        <div className="flex flex-col text-white gap-3 max-h-96 bg-slate-400">
+          <div>
+            <Image
+              className="rounded-2xl"
+              src={getImageFromMarkdown(project.readme)}
+              alt={project.name}
+              width={300}
+              height={300}
+            />
+          </div>
+          <div className="w-full text-center">
+            <h3>{formatName(project.name)}</h3>
+            <p>{project.description}</p>
+          </div>
+        </div>
+      </Link>
+      <div className="flex w-full h-24 justify-center p-4 gap-4">
+        <Link href={project.homepageUrl} target="_blank">
+          <GlobalOutlined size={40} color="white" />
         </Link>
-        <Link
-          href={`/projects/${proj.proj.slug}`}
-          className={styles.linkButton}
-        >
-          Detalhes
+        <Link href={project.url} target="_blank" className="">
+          <GithubOutlined size={40} color="white" />
         </Link>
       </div>
-    </section>
+    </>
   );
 }
 

@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
-    domains: ['images.prismic.io'],
+    domains: ["picsum.photos", "github.com", "www.ics.uci.edu"],
   },
 };
 
