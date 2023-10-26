@@ -32,7 +32,10 @@ const experiences = [
 
 function ProfessionalSkills() {
   return (
-    <section className="flex text-white flex-col gap-2 border-2 border-orange-500 items-center justify-center w-full">
+    <section
+      id="professional-experience"
+      className="flex text-white flex-col gap-2 border-2 border-orange-500 items-center justify-center w-full"
+    >
       <h2 className="text-center">Experiencia Profissional</h2>
       {experiences.map((experience) => (
         <ExperienceCard key={experience.title} data={experience} />

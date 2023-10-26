@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { InputNumber, Tag } from "antd";
+import { Tag } from "antd";
 import {
-  GithubOutlined,
   BookOutlined,
   HomeOutlined,
   FieldTimeOutlined,
@@ -46,12 +45,12 @@ function EducationCard({ education }: { education: EducationProps }) {
                   <p>{education.duration}</p>
                 </div>
               ) : (
-                <p className="flex gap-2 rounded-md w-full text-center text-white justify-evenly">
+                <div className="flex gap-2 rounded-md w-full text-center text-white justify-evenly">
                   <FieldTimeOutlined />
                   {education.time?.map((time) => (
                     <p key={time}>{time}</p>
                   ))}
-                </p>
+                </div>
               )}
             </div>
           </div>

@@ -11,10 +11,10 @@ export default async function Home() {
   const pinnedRepos = await Client.getPinnedRepos();
 
   return (
-    <>
+    <div>
       <Header />
       <Divider />
-      <main className="flex flex-col w-full h-full">
+      <main className="flex flex-col w-full h-full" id="blur1">
         <ApresentationCard />
         <Divider />
         <MyTechStacks />
@@ -25,6 +25,6 @@ export default async function Home() {
         <Divider />
         <Projects projects={pinnedRepos} />
       </main>
-    </>
+    </div>
   );
 }

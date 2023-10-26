@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "github-markdown-css/github-markdown.css";
+
+.blur {
+  filter: blur(10px);
+}
