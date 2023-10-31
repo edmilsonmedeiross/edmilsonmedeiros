@@ -6,9 +6,10 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const menu = [
     { name: "Home", url: "/" },
-    { name: "Services", url: "/" },
+    { name: "Projetos", url: "#project" },
     { name: "About", url: "/about" },
-    { name: "Contact", url: "/" },
+    { name: "Educação", url: "#education" },
+    { name: "Experiência", url: "#professional-experience" },
   ];
 
   useEffect(() => {
@@ -24,6 +25,14 @@ const Navbar = () => {
       containerToBlur1?.classList.remove("blur");
     }
   }, [navbar]);
+
+  const onCloseDrawer = () => {
+    const input = document.querySelector("#my-drawer") as HTMLInputElement;
+    if (input) {
+      input.checked = false;
+      setNavbar(false);
+    }
+  };
 
   return (
     <div className="drawer">
@@ -59,7 +68,7 @@ const Navbar = () => {
         />
         <ul className="menu p-4 w-2/5 min-h-full h-full bg-base-200 text-base-content flex flex-col gap-3 justify-center">
           {menu.map(({ name, url }) => (
-            <li key={name}>
+            <li key={name} onClick={onCloseDrawer}>
               <Link href={url}>{name}</Link>
             </li>
           ))}
