@@ -11,8 +11,8 @@ function MyTechStacks() {
         <div className="fex flex-col p-5">
           <h1 className="text-xl text-center">Minhas Tech Stacks</h1>
         </div>
-        <div className="flex border-2 border-red-500 p-2 gap-2 w-4/5 justify-center">
-          <div className="flex flex-col w-3/6 items-center gap-10 border-2 border-yellow-300">
+        <div className="flex border-2 border-red-500 p-2 gap-2 w-4/5 justify-center max-sm:flex-col max-sm:items-center max-md:gap-8">
+          <div className="flex flex-col w-3/6 items-center gap-10 border-2 border-yellow-300 max-md:w-4/5">
             <p className="text-center">Cotidiano 🧑‍💻</p>
             <IconList iconData={stacks} />
           </div>

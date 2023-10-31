@@ -19,12 +19,12 @@ interface ExperienceProps {
 
 function ExperienceCard({ data }: { data: ExperienceProps }) {
   return (
-    <div className="flex flex-col p-3 items-center border-2 border-violet-700 max-w-3xl w-full h-full">
-      <div className="flex border-2 items-start justify-between border-red-600 w-4/5 h-auto">
-        <div className="flex gap-2">
+    <div className="flex flex-col p-3 items-center border-2 border-violet-700 max-w-3xl w-full h-full max-md:flex-col max-md:text-sm max-sm:text-xs">
+      <div className="flex border-2 items-start justify-between border-red-600 w-4/5 h-auto max-md:flex-col max-md:gap-2 max-md:h-2/3 max-md:w-3/4">
+        <div className="flex gap-2 max-md:flex-col">
           <div className="flex flex-col border-2 w-auto h-full">
             <Image
-              className="rounded-br-2xl rounded-ss-2xl"
+              className="rounded-br-2xl rounded-ss-2xl max-md:hidden"
               src={data.image}
               alt={data.title}
               width={100}
@@ -49,7 +49,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
             </div>
           </div>
         </div>
-        <p className="bg-green-400 px-2 rounded-md flex gap-2 font-normal text-sm text-lime-500 bg-opacity-25 text-center">
+        <p className="bg-green-400 px-2 rounded-md flex gap-2 font-normal text-sm text-lime-500 bg-opacity-25 text-center max-md:text-xs max-md:flex max-md:items-center max-md:justify-center max-md:gap-1">
           <FieldTimeOutlined />
           {data.status}
         </p>

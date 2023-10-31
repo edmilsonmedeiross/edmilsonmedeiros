@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatName, getImageFromMarkdown } from "@/helpers";
 import { GithubOutlined, GlobalOutlined } from "@ant-design/icons";
-import { Divider } from "antd";
+
 interface ProjectProps {
   name: string;
   description: string;
@@ -15,25 +15,24 @@ interface ProjectProps {
 
 function ProjectCard({ project }: { project: ProjectProps }) {
   return (
-    <div className="flex w-52 p-2 flex-col justify-center items-center border-2 border-red-600">
-      <Link
-        href={`/project/${project.name}`}
-        className="flex flex-col items-center justify-center"
-      >
-        <Image
-          className="rounded-2xl"
-          src={getImageFromMarkdown(project.readme)}
-          alt={project.name}
-          width={200}
-          height={200}
-        />
-
-        <h3 className="text-center font-medium text-lg p-2">
-          {formatName(project.name)}
-        </h3>
-        <p className="line-clamp-4 p-2">{project.description}</p>
-      </Link>
-      <div className="flex gap-3 p-2">
+    <div className="border-2 border-red-600  text-white p-4 flex flex-col items-center justify-center">
+      <div className="border-2 w-5/6 h-60 flex flex-col items-center justify-between">
+        <Link
+          href={`/project/${project.name}`}
+          className="flex flex-col items-center justify-between gap-2"
+        >
+          <h3 className="">{formatName(project.name)}</h3>
+          <Image
+            className="rounded-md w-11/12"
+            src={getImageFromMarkdown(project.readme)}
+            alt={project.name}
+            width={200}
+            height={200}
+          />
+          <p className="text-left px-2 line-clamp-4">{project.description}</p>
+        </Link>
+      </div>
+      <div className="border-2 w-5/6 flex items-center justify-center gap-3">
         <Link href={project.homepageUrl} target="_blank">
           <GlobalOutlined color="white" />
         </Link>

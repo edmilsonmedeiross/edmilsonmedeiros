@@ -20,17 +20,17 @@ interface EducationProps {
 function EducationCard({ education }: { education: EducationProps }) {
   return (
     <>
-      <div className="flex w-full justify-center max-w-3xl border-2 border-yellow-300 p-3">
-        <div className="flex gap-4 items-start justify-between w-4/5 border-2 border-violet-600">
+      <div className="flex w-full justify-center max-w-3xl border-2 border-yellow-300 p-3 max-md:text-sm mb-5">
+        <div className="flex gap-4 items-start justify-between w-4/5 border-2 border-violet-600 max-md:w-9/12 max-md:flex-col max-md:gap-2">
           <div className="flex gap-3 border-2 border-red-600">
             <Image
-              className="rounded-bl-2xl rounded-tr-2xl"
+              className="rounded-bl-2xl rounded-tr-2xl max-md:hidden"
               src={education.image}
               alt={education.college}
               width={80}
               height={80}
             />
-            <div className="flex flex-col justify-between gap-1 h-full border-2">
+            <div className="flex flex-col justify-between gap-1 h-full border-2 max-md:text-sm max-sm:text-xs">
               <div className="flex gap-2">
                 <BookOutlined />
                 <h3>{education.title}</h3>
@@ -40,12 +40,12 @@ function EducationCard({ education }: { education: EducationProps }) {
                 <h4>{education.college}</h4>
               </div>
               {education.isFree ? (
-                <div className="flex gap-2">
+                <div className="flex gap-2 max-md:text-sm max-sm:text-xs">
                   <FieldTimeOutlined />
                   <p>{education.duration}</p>
                 </div>
               ) : (
-                <div className="flex gap-2 rounded-md w-full text-center text-white justify-evenly">
+                <div className="flex gap-2 rounded-md w-full text-center text-white justify-evenly max-md:text-sm max-sm:text-xs">
                   <FieldTimeOutlined />
                   {education.time?.map((time) => (
                     <p key={time}>{time}</p>
@@ -54,10 +54,10 @@ function EducationCard({ education }: { education: EducationProps }) {
               )}
             </div>
           </div>
-          <div className="flex flex-col justify-start gap-2 h-full border-2">
+          <div className="flex flex-col justify-start gap-2 h-full border-2 max-md:text-xs">
             <Tag
               bordered={false}
-              className=" bg-green-400 text-lime-500 bg-opacity-25 text-center"
+              className=" bg-green-400 text-lime-500 bg-opacity-25 text-center max-md:text-xs"
             >
               {education.status}
             </Tag>

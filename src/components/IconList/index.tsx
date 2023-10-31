@@ -15,7 +15,7 @@ const IconList = ({ iconData }: { iconData: IconProps[] }) => {
           className="flex flex-col items-center justify-center gap-2 w-20 p-2 border-2"
         >
           <Image src={icon.image} alt={icon.name} width={40} height={40} />
-          <p className="text-sm text-cyan-50">{icon.name}</p>
+          <p className="text-sm text-cyan-50 max-sm:text-xs">{icon.name}</p>
         </div>
       ))}
     </div>

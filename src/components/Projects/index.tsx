@@ -1,21 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProjectCard from "../ProjectCard";
 import { IPinnedRepo } from "@/helpers/types";
 
+import Caroussel from "../Caroussel";
+
 function Projects({ projects }: { projects: IPinnedRepo[] }) {
+  const projectsCards = projects.map((project) => (
+    <ProjectCard key={project.name} project={project} />
+  ));
+
   return (
     <section
       id="projects"
-      className="flex flex-col w-full text-white border-2 border-orange-600 items-center"
+      className="border-2 border-orange-600 flex items-center flex-col p-3 "
     >
-      <h1 className="text-center p-3">Principais Projetos</h1>
+      <h1 className="text-center text-xl text-white p-3 mb-10">
+        Principais Projetos
+      </h1>
 
-      <div className="flex gap-3 flex-wrap items-center justify-center border-2 border-yellow-400 max-w-3xl w-full">
-        {projects.map((project) => (
-          <ProjectCard project={project} key={project.name} />
-        ))}
+      <div className="border-2 border-yellow-400 max-w-3xl ">
+        <div className="border-2 border-blue-600 ">
+          <Caroussel cards={projectsCards} />
+        </div>
       </div>
     </section>
   );
