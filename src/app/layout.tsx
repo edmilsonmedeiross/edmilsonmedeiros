@@ -1,7 +1,14 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Divider } from "antd";
+import { Inter as FontSans } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
+
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,11 +21,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="flex flex-col bg-slate-950 w-full h-full">
-        <Header />
-        <Divider />
-        {children}
+    <html lang="en" suppressHydrationWarning={true}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased flex flex-col w-full h-full",
+          fontSans.variable
+        )}
+        suppressHydrationWarning={true}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
