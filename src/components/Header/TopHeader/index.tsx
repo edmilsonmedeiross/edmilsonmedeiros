@@ -4,6 +4,7 @@ import {
   GithubOutlined,
   WhatsAppOutlined,
 } from "@ant-design/icons";
+import TogleTheme from "@/components/TogleTheme";
 import Link from "next/link";
 const TopHeader = () => {
   const items = [
@@ -39,6 +40,7 @@ const TopHeader = () => {
             </li>
           ))}
         </ul>
+        <TogleTheme />
       </div>
     </div>
   );
