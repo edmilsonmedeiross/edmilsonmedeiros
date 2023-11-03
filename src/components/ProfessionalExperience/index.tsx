@@ -34,7 +34,7 @@ function ProfessionalSkills() {
   return (
     <section
       id="professional-experience"
-      className="flex text-white flex-col gap-2 border-2 border-orange-500 items-center justify-center w-full"
+      className="flex flex-col gap-2 mt-10 border-2 border-orange-500 items-center justify-center w-full"
     >
       <h2 className="text-center mb-10 text-xl">Experiencia Profissional</h2>
       {experiences.map((experience) => (

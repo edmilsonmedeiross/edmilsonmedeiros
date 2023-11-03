@@ -7,9 +7,9 @@ import IconList from "../IconList";
 function MyTechStacks() {
   return (
     <section className="flex flex-col border-2 border-violet-600 w-full items-center">
-      <div className="text-slate-50 flex flex-col items-center gap-4 border-2 max-w-3xl">
-        <div className="fex flex-col p-5">
-          <h1 className="text-xl text-center">Minhas Tech Stacks</h1>
+      <div className="flex flex-col items-center gap-4 border-2 max-w-3xl">
+        <div className="fex flex-col p-2">
+          <h1 className="text-xl text-center mt-10">Minhas Tech Stacks</h1>
         </div>
         <div className="flex border-2 border-red-500 p-2 gap-2 w-4/5 justify-center max-sm:flex-col max-sm:items-center max-md:gap-8">
           <div className="flex flex-col w-3/6 items-center gap-10 border-2 border-yellow-300 max-md:w-4/5">

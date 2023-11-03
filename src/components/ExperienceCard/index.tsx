@@ -19,7 +19,7 @@ interface ExperienceProps {
 
 function ExperienceCard({ data }: { data: ExperienceProps }) {
   return (
-    <div className="flex flex-col p-3 items-center border-2 border-violet-700 max-w-3xl w-full h-full max-md:flex-col max-md:text-sm max-sm:text-xs">
+    <div className="flex flex-col text-sm p-3 items-center border-2 border-violet-700 max-w-3xl w-full h-full max-md:flex-col max-md:text-sm max-sm:text-xs">
       <div className="flex border-2 items-start justify-between border-red-600 w-4/5 h-auto max-md:flex-col max-md:gap-2 max-md:h-2/3 max-md:w-3/4">
         <div className="flex gap-2 max-md:flex-col">
           <div className="flex flex-col border-2 w-auto h-full">
@@ -32,7 +32,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
             />
             <h2>{data.employer}</h2>
           </div>
-          <div className="border-2 flex flex-col w-full justify-between border-green-400">
+          <div className="border-2 flex flex-col w-full justify-between border-green-400 max-sm:gap-2 max-md:gap-1">
             <div className="flex gap-2">
               <ToolOutlined />
               <h1>{data.title}</h1>

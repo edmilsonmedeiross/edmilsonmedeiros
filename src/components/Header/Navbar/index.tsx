@@ -6,7 +6,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const menu = [
     { name: "Home", url: "/" },
-    { name: "Projetos", url: "#project" },
+    { name: "Projetos", url: "#projects" },
     { name: "About", url: "/about" },
     { name: "Educação", url: "#education" },
     { name: "Experiência", url: "#professional-experience" },
@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="drawer">
+    <div className="drawer border-2 font-semibold dark:text-primary-foreground text-slate-950 border-white bg-blue-violet-gradient">
       <input
         id="my-drawer"
         type="checkbox"
@@ -44,8 +44,8 @@ const Navbar = () => {
       />
       <div
         className={`${
-          navbar && "bg-slate-800 bg-opacity-10 filter blur-sm"
-        } drawer-content flex justify-end w-full h-40 bg-slate-800 p-3`}
+          navbar && " bg-opacity-10 filter blur-sm"
+        } drawer-content flex justify-end w-full h-40  p-3`}
       >
         <ul className="w-full flex items-center justify-center gap-10 max-md:hidden">
           {menu.map(({ name, url }) => (

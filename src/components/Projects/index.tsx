@@ -16,9 +16,7 @@ function Projects({ projects }: { projects: IPinnedRepo[] }) {
       id="projects"
       className="border-2 border-orange-600 flex items-center flex-col p-3 "
     >
-      <h1 className="text-center text-xl text-white p-3 mb-10">
-        Principais Projetos
-      </h1>
+      <h1 className="text-center text-xl p-3 mb-10">Principais Projetos</h1>
 
       <div className="border-2 border-yellow-400 max-w-3xl ">
         <div className="border-2 border-blue-600 ">

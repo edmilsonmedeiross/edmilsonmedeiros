@@ -15,7 +15,7 @@ interface ProjectProps {
 
 function ProjectCard({ project }: { project: ProjectProps }) {
   return (
-    <div className="border-2 border-red-600  text-white p-4 flex flex-col items-center justify-center">
+    <div className="border-2 border-red-600 p-4 flex flex-col items-center justify-center">
       <div className="border-2 w-5/6 h-60 flex flex-col items-center justify-between">
         <Link
           href={`/project/${project.name}`}

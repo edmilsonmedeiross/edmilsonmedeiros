@@ -22,6 +22,8 @@ module.exports = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
+        blueTransparent: "rgba(0, 0, 255, 0.7)", // Azul com 50% de transparência
+        violetTransparent: "rgba(138, 43, 226, 0.9)", // Violeta com 50% de transparência
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -56,6 +58,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: (theme) => ({
+        "blue-violet-gradient": `linear-gradient(to right, ${theme(
+          "colors.blueTransparent"
+        )}, ${theme("colors.violetTransparent")})`,
+      }),
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -4,11 +4,11 @@ import React from "react";
 
 function ApresentationCard() {
   return (
-    <section className="flex border-2 border-red-600 h-auto justify-center text-slate-50">
+    <section className="flex border-2 border-red-600 text-primary-foreground h-auto justify-center mt-10">
       <div className="flex items-center justify-center max-w-3xl max-sm:flex-col border-2">
         <div className="flex border-2 w-4/5 border-violet-600 items-center p-4 max-sm:flex-col max-sm:gap-3">
           <Image
-            className="rounded-full border-4 border-slate-950"
+            className="rounded-full"
             src="/image/eddie.jpeg"
             alt="Eddie"
             width={200}
