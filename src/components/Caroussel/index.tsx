@@ -30,7 +30,7 @@ const Caroussel: React.FC<CarousselProps> = ({ cards }) => {
   return (
     <div className="border-2 p-3 border-violet-700 flex items-center justify-between ">
       <Button
-        className="w-1/5"
+        className="w-1/5 bg-blue-400"
         type="primary"
         icon={<LeftOutlined />}
         onClick={prev}
@@ -51,7 +51,7 @@ const Caroussel: React.FC<CarousselProps> = ({ cards }) => {
         </div>
       </div>
       <Button
-        className="w-1/5"
+        className="w-1/5 bg-blue-400"
         type="primary"
         icon={<RightOutlined />}
         onClick={next}

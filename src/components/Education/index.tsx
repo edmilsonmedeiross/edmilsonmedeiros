@@ -38,7 +38,7 @@ function Education() {
       id="education"
       className="w-full flex flex-col mt-10 items-center justify-center border-2 border-orange-500"
     >
-      <h1 className="text-center text-xl mb-10">Educação</h1>
+      <h1 className="text-center text-xl mb-10 font-extrabold">Educação</h1>
       {educations.map((education) => (
         <EducationCard education={education} key={education.title} />
       ))}

@@ -7,6 +7,7 @@ import {
   ToolOutlined,
   FireOutlined,
 } from "@ant-design/icons";
+import { Tag } from "antd";
 
 interface ExperienceProps {
   title: string;
@@ -19,7 +20,7 @@ interface ExperienceProps {
 
 function ExperienceCard({ data }: { data: ExperienceProps }) {
   return (
-    <div className="flex flex-col text-sm p-3 items-center border-2 border-violet-700 max-w-3xl w-full h-full max-md:flex-col max-md:text-sm max-sm:text-xs">
+    <div className="flex flex-col text-sm font-medium p-3 items-center border-2 border-violet-700 max-w-3xl w-full h-full max-md:flex-col max-md:text-sm max-sm:text-xs">
       <div className="flex border-2 items-start justify-between border-red-600 w-4/5 h-auto max-md:flex-col max-md:gap-2 max-md:h-2/3 max-md:w-3/4">
         <div className="flex gap-2 max-md:flex-col">
           <div className="flex flex-col border-2 w-auto h-full">
@@ -32,7 +33,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
             />
             <h2>{data.employer}</h2>
           </div>
-          <div className="border-2 flex flex-col w-full justify-between border-green-400 max-sm:gap-2 max-md:gap-1">
+          <div className="border-2 flex flex-col w-full justify-around border-green-400 max-sm:gap-2 max-md:gap-1">
             <div className="flex gap-2">
               <ToolOutlined />
               <h1>{data.title}</h1>
@@ -49,10 +50,14 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
             </div>
           </div>
         </div>
-        <p className="bg-green-400 px-2 rounded-md flex gap-2 font-normal text-sm text-lime-500 bg-opacity-25 text-center max-md:text-xs max-md:flex max-md:items-center max-md:justify-center max-md:gap-1">
+        <Tag
+          bordered={true}
+          color="success"
+          className="flex items-center gap-2 justify-center p-1 px-2 max-md:text-xs"
+        >
           <FieldTimeOutlined />
           {data.status}
-        </p>
+        </Tag>
       </div>
     </div>
   );

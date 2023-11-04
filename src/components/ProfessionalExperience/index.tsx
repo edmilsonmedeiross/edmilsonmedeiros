@@ -36,7 +36,9 @@ function ProfessionalSkills() {
       id="professional-experience"
       className="flex flex-col gap-2 mt-10 border-2 border-orange-500 items-center justify-center w-full"
     >
-      <h2 className="text-center mb-10 text-xl">Experiencia Profissional</h2>
+      <h2 className="text-center mb-10 text-xl font-extrabold">
+        Experiencia Profissional
+      </h2>
       {experiences.map((experience) => (
         <ExperienceCard key={experience.title} data={experience} />
       ))}

@@ -14,7 +14,7 @@ function ApresentationCard() {
             width={200}
             height={200}
           />
-          <div className="flex flex-col max-sm:w-3/4 p-2">
+          <div className="flex flex-col max-sm:w-3/4 p-2 font-medium">
             <h1>Olá eu sou o Eddie 👋</h1>
             <h3>
               Sou um desenvolvedor fullstack que ama o que faz, e estou sempre

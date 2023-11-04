@@ -20,7 +20,7 @@ interface EducationProps {
 function EducationCard({ education }: { education: EducationProps }) {
   return (
     <>
-      <div className="flex w-full text-sm justify-center max-w-3xl border-2 border-yellow-300 p-3 max-md:text-sm mb-5">
+      <div className="flex w-full text-sm font-medium justify-center max-w-3xl border-2 border-yellow-300 p-3 max-md:text-sm mb-5">
         <div className="flex gap-4 items-start justify-between w-4/5 border-2 border-violet-600 max-md:w-9/12 max-md:flex-col max-md:gap-2">
           <div className="flex gap-3 border-2 border-red-600">
             <Image
@@ -56,15 +56,17 @@ function EducationCard({ education }: { education: EducationProps }) {
           </div>
           <div className="flex flex-col justify-start gap-2 h-full border-2 max-md:text-xs">
             <Tag
-              bordered={false}
-              className=" bg-green-400 text-lime-500 bg-opacity-25 text-center max-md:text-xs"
+              bordered={true}
+              color="purple"
+              className="flex items-center justify-center p-1 max-md:text-xs"
             >
               {education.status}
             </Tag>
             {!education.isFree && (
               <Tag
-                bordered={false}
-                className=" bg-green-400 text-lime-500 bg-opacity-25 text-center"
+                bordered={true}
+                color="success"
+                className="flex items-center justify-center p-1 max-md:text-xs"
                 icon={<FieldTimeOutlined />}
               >
                 {education.duration}

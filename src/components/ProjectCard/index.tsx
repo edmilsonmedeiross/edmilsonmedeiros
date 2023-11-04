@@ -15,7 +15,7 @@ interface ProjectProps {
 
 function ProjectCard({ project }: { project: ProjectProps }) {
   return (
-    <div className="border-2 border-red-600 p-4 flex flex-col items-center justify-center">
+    <div className="border-2 dark:text-white border-red-600 p-4 flex flex-col items-center justify-center">
       <div className="border-2 w-5/6 h-60 flex flex-col items-center justify-between">
         <Link
           href={`/project/${project.name}`}
@@ -29,15 +29,17 @@ function ProjectCard({ project }: { project: ProjectProps }) {
             width={200}
             height={200}
           />
-          <p className="text-left px-2 line-clamp-4">{project.description}</p>
+          <p className="text-left px-2 line-clamp-4 dark:text-white">
+            {project.description}
+          </p>
         </Link>
       </div>
-      <div className="border-2 w-5/6 flex items-center justify-center gap-3">
+      <div className="border-2 bg-slate-950 bg-opacity-40 h-10 rounded-b-md w-5/6 flex items-center justify-center gap-3">
         <Link href={project.homepageUrl} target="_blank">
-          <GlobalOutlined color="white" />
+          <GlobalOutlined color="white" className="text-xl" />
         </Link>
         <Link href={project.url} target="_blank" className="">
-          <GithubOutlined color="white" />
+          <GithubOutlined color="white" className="text-xl" />
         </Link>
       </div>
     </div>
