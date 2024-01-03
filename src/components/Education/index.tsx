@@ -36,7 +36,7 @@ function Education() {
   return (
     <div
       id="education"
-      className="w-full flex flex-col mt-10 items-center justify-center border-2 border-orange-500"
+      className="w-full flex flex-col mt-10 items-center justify-center"
     >
       <h1 className="text-center text-xl mb-10 font-extrabold">Educação</h1>
       {educations.map((education) => (

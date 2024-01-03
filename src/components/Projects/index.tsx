@@ -14,14 +14,14 @@ function Projects({ projects }: { projects: IPinnedRepo[] }) {
   return (
     <section
       id="projects"
-      className="border-2 font-medium border-orange-600 flex items-center flex-col p-3 "
+      className=" font-medium  flex items-center flex-col p-3 "
     >
       <h1 className="text-center text-xl font-extrabold p-3 mb-10">
         Principais Projetos
       </h1>
 
-      <div className="border-2 border-yellow-400 max-w-3xl ">
-        <div className="border-2 border-blue-600 ">
+      <div className=" border-2 rounded-lg bg-blue-500 bg-opacity-10 max-w-3xl ">
+        <div className="  ">
           <Caroussel cards={projectsCards} />
         </div>
       </div>

@@ -20,9 +20,9 @@ interface EducationProps {
 function EducationCard({ education }: { education: EducationProps }) {
   return (
     <>
-      <div className="flex w-full text-sm font-medium justify-center max-w-3xl border-2 border-yellow-300 p-3 max-md:text-sm mb-5">
-        <div className="flex gap-4 items-start justify-between w-4/5 border-2 border-violet-600 max-md:w-9/12 max-md:flex-col max-md:gap-2">
-          <div className="flex gap-3 border-2 border-red-600">
+      <div className="border-2 bg-blue-500 bg-opacity-10 rounded-lg flex w-full text-sm font-medium justify-center max-w-3xl p-3 max-md:text-sm mb-5">
+        <div className="flex gap-4 items-start justify-between w-4/5 max-md:w-9/12 max-md:flex-col max-md:gap-2">
+          <div className="flex gap-3">
             <Image
               className="rounded-bl-2xl rounded-tr-2xl max-md:hidden"
               src={education.image}
@@ -30,7 +30,7 @@ function EducationCard({ education }: { education: EducationProps }) {
               width={80}
               height={80}
             />
-            <div className="flex flex-col gap-1 justify-between border-2 max-md:text-sm max-sm:text-xs">
+            <div className="flex flex-col gap-1 justify-between max-md:text-sm max-sm:text-xs">
               <div className="flex gap-2">
                 <BookOutlined />
                 <h3>{education.title}</h3>
@@ -54,7 +54,7 @@ function EducationCard({ education }: { education: EducationProps }) {
               )}
             </div>
           </div>
-          <div className="flex flex-col justify-start gap-2 h-full border-2 max-md:text-xs">
+          <div className="flex flex-col justify-start gap-2 h-full max-md:text-xs">
             <Tag
               bordered={true}
               color="purple"

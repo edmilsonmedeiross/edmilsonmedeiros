@@ -13,13 +13,9 @@ export default async function Home() {
     <>
       <main className="flex flex-col w-full h-full" id="blur1">
         <ApresentationCard />
-
         <MyTechStacks />
-
         <Education />
-
         <ProfessionalSkills />
-
         <Projects projects={pinnedRepos} />
       </main>
     </>
